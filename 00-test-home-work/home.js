@@ -54,16 +54,3 @@ console.log("Знижка в грн = " + sale);
 /* ЧИСТИЙ ПРИБУТОК ПІСЛЯ ЗНИЖКИ */
 const profit = (sum_price/2)-sale;
 console.log("Чистий прибуток = " + Math.round( profit));
-
-console.log(
-`Максимальна ціна = ${Math.max(price1,price2,price3)}
-Мінімальна ціна = ${Math.min(price1,price2,price3)}
-Сума цін = ${sum_price}
-Сума без копійок = ${sum_trunk}
-Сума товару округленадо найближчого = ${Math.round(sum_trunk/100)*100}
-якщо 0 то число парне/ якщо 1 число не парне = ${(Math.round(sum_price)%2)}
-Решта = ${rest}
-Средня ціна округлена до другого знаку після коми = ${(Math.round(avarege*100))/100}
-Знижка = ${sale}
-Чистий прибуток = ${Math.round(profit)}`
-);
