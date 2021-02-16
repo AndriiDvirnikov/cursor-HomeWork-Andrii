@@ -27,9 +27,7 @@ console.log("округлення до більшого = " + Math.ceil(price1) 
 /* ОКРУГЛЕННЯ НАЙБЛИЖЧЕ*/
 console.log("Сума товару округленадо найближчого = " + (Math.round(sum_trunk/100)*100) );
 
-/* ОКРУГЛЕННЯ Math.floor*/
 
-console.log("якщо 0 то число парне/ якщо 1 число не парне = " + sum_price % 2 );
 
 if ((Math.round(sum_price)%2)===0){
     console.log("число парне");
@@ -57,4 +55,15 @@ console.log("Знижка в грн = " + sale);
 const profit = (sum_price/2)-sale;
 console.log("Чистий прибуток = " + Math.round( profit));
 
-
+console.log(
+`Максимальна ціна = ${Math.max(price1,price2,price3)}
+Мінімальна ціна = ${Math.min(price1,price2,price3)}
+Сума цін = ${sum_price}
+Сума без копійок = ${sum_trunk}
+Сума товару округленадо найближчого = ${Math.round(sum_trunk/100)*100}
+якщо 0 то число парне/ якщо 1 число не парне = ${(Math.round(sum_price)%2)}
+Решта = ${rest}
+Средня ціна округлена до другого знаку після коми = ${(Math.round(avarege*100))/100}
+Знижка = ${sale}
+Чистий прибуток = ${Math.round(profit)}`
+);
