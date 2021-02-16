@@ -41,7 +41,7 @@ const rest = 500 - sum_price;
 console.log("Решта = " + rest);
 
 /* СЕРЕДНЄ ЗНАЧЕННЯ */
-const avarege = (price1 + price2 + price3)/2;
+const avarege = (price1 + price2 + price3)/3;
 console.log("Средня ціна = "  +avarege);
 console.log("Средня ціна округлена до другого знаку після коми = " + (Math.round(avarege*100))/100);
 
