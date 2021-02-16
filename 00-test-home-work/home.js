@@ -28,14 +28,15 @@ console.log("округлення до більшого = " + Math.ceil(price1) 
 console.log("Сума товару округленадо найближчого = " + (Math.round(sum_trunk/100)*100) );
 
 /* ОКРУГЛЕННЯ Math.floor*/
-console.log("якщо 0 то число парне/ якщо 1 число не парне = " + Math.floor(sum_price)%2);
-/*
-if ((Math.floor(sum_price)%2)===0){
+
+console.log("якщо 0 то число парне/ якщо 1 число не парне = " + sum_price % 2 );
+
+if ((Math.round(sum_price)%2)===0){
     console.log("число парне");
     } else {
         console.log("число не парне");
     }
-*/
+
 /* РЕШТА */
 const rest = 500 - sum_price;
 console.log("Решта = " + rest);
