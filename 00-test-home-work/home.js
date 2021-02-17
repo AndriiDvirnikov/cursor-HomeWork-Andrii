@@ -32,12 +32,14 @@ console.log(`округлення до більшого = ${math_ceil};`);
 const math_round = Math.round(sum_trunk/100)*100;
 console.log(`Сума товару округленадо найближчого = ${math_round};`);
 
-
+ let result_odd;
 const sum_price_odd = Math.round(sum_price)%2;
 if (sum_price_odd === 0){
     console.log("число парне");
+    result_odd = "Число парне";
     } else {
-        console.log("число не парне");
+   console.log("число не парне");
+    result_odd = "Число не парне";
     }
 
 /* РЕШТА */
@@ -57,8 +59,24 @@ const rnum_round = Math.round(rNum*100);
 console.log(`Знижка = ${rnum_round} %`);
 const sale = (Math.round(rNum*100)/100)*sum_price;
 const sale_round = (Math.round(sale*100))/100;
-console.log(`Знижка в грн =${sale_round}`);
+console.log(`Знижка в грн = ${sale_round}`);
 
 /* ЧИСТИЙ ПРИБУТОК ПІСЛЯ ЗНИЖКИ */
 const profit = Math.round((sum_price/2)-sale);
 console.log(`Чистий прибуток = ${profit}`);
+
+document.writeln (`Максимальна ціна = ${max_price};</br>
+Мінімальна ціна = ${min_price};</br>
+Сума цін = ${sum_price};</br>
+Сума без копійок ${sum_trunk};</br>
+округлення до меншого = ${math_floor};</br>
+округлення до більшого = ${math_ceil};</br>
+Сума товару округленадо найближчого = ${math_round};</br>
+${result_odd};</br>
+Решта = ${rest};<br/>
+Средня ціна = ${mid_price};<br/>
+Знижка = ${rnum_round} %;<br>
+Знижка в грн = ${sale_round};<br/>
+Чистий прибуток = ${profit}`);
+
+
