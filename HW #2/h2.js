@@ -12,4 +12,20 @@ do{
 } while(isNaN(m));
 console.log (m,typeof(m));
 
-
+let sum = 0;
+if (confirm("пропускати парні?")){
+    console.log("Пропускати парні");
+    for (n ; n<=m; n++){
+        if(n%2 === 1){
+            sum +=n;
+        }
+    }
+    console.log (`Пропускати парні сума: ${sum}`);
+    document.writeln(`Пропускати парні сума: ${sum}`)
+}else{
+    for (n ; n<=m; n++){
+            sum +=n;
+        }
+    console.log(`Сума чисел ${sum}`);
+    document.writeln(`Сума чисел: ${sum}`)
+}
