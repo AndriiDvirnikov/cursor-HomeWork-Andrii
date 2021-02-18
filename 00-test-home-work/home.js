@@ -19,7 +19,7 @@ console.log(`Сума цін = ${sum_price} ;`);
 
 /* СУМА БЕЗ КОПІЙОК */
 const sum_trunk = Math.trunc(price_cat) + Math.trunc(price_dog) + Math.trunc(price_elephant);
-const math_floor = Math.floor(sum_trunk/100)*100;
+const math_floor = Math.floor(sum_trunk);
 console.log(`Сума без копійок округлена до меншого ${math_floor};`);
 
 
