@@ -1,53 +1,43 @@
-const price1 = 15.678;
-const price2 = 123.965;
-const price3 = 90.2345;
+const price_cat = 15.678;
+const price_dog = 123.965;
+const price_elephant = 90.2345;
 
 const money = 500;
+console.log (`Гроші ${money}`);
 
 /* МАКСИМАЛЬНА ЦІНА */
-const max_price = Math.max(price1,price2,price3);
+const max_price = Math.max(price_cat,price_dog,price_elephant);
 console.log(`Максимальна ціна = ${max_price} ;`);
 
 /* МІНІМАЛЬНА ЦІНА */
-const min_price = Math.min(price1,price2,price3);
+const min_price = Math.min(price_cat,price_dog,price_elephant);
 console.log(`Мінімальна ціна = ${min_price};`);
 
 /* СУМА ЦІН */
-const sum_price = price1 + price2 + price3;
+const sum_price = price_cat + price_dog + price_elephant;
 console.log(`Сума цін = ${sum_price} ;`);
 
 /* СУМА БЕЗ КОПІЙОК */
-const sum_trunk = Math.trunc(price1) + Math.trunc(price2) + Math.trunc(price3);
-console.log(`Сума без копійок ${sum_trunk};`);
+const sum_trunk = Math.trunc(price_cat) + Math.trunc(price_dog) + Math.trunc(price_elephant);
+const math_floor = Math.floor(sum_trunk/100)*100;
+console.log(`Сума без копійок округлена до меншого ${math_floor};`);
 
-
-const math_floor =  Math.floor (price1);
-console.log(`округлення до меншого = ${math_floor} ;`);
-
-/* ОКРУГЛЕННЯ Math.ceil */
-const math_ceil = Math.ceil(price1);
-console.log(`округлення до більшого = ${math_ceil};`);
 
 /* ОКРУГЛЕННЯ НАЙБЛИЖЧЕ*/
-const math_round = Math.round(sum_trunk/100)*100;
-console.log(`Сума товару округленадо найближчого = ${math_round};`);
+const math_round = Math.round(sum_price/100)*100;
+console.log(`Сума товару округленадо найближчих сотень = ${math_round};`);
 
- let result_odd;
-const sum_price_odd = Math.round(sum_price)%2;
-if (sum_price_odd === 0){
-    console.log("число парне");
-    result_odd = "Число парне";
-    } else {
-   console.log("число не парне");
-    result_odd = "Число не парне";
-    }
+
+const odd = math_floor % 2;
+console.log(`Число є ${odd? "непарним" : "парним"}`);
+
 
 /* РЕШТА */
-const rest = 500 - sum_price;
+const rest = money - sum_price;
 console.log(`Решта = ${rest};`);
 
 /* СЕРЕДНЄ ЗНАЧЕННЯ */
-const mid_price = (price1 + price2 + price3)/3;
+const mid_price = (price_cat + price_dog + price_elephant)/3;
 console.log(`Средня ціна = ${mid_price}`);
 
 const mid_price_round = Math.round(mid_price*100)/100;
@@ -65,14 +55,13 @@ console.log(`Знижка в грн = ${sale_round}`);
 const profit = Math.round((sum_price/2)-sale);
 console.log(`Чистий прибуток = ${profit}`);
 
-document.writeln (`Максимальна ціна = ${max_price};</br>
+document.writeln (`Гроші ${money};</br>
+Максимальна ціна = ${max_price};</br>
 Мінімальна ціна = ${min_price};</br>
 Сума цін = ${sum_price};</br>
-Сума без копійок ${sum_trunk};</br>
-округлення до меншого = ${math_floor};</br>
-округлення до більшого = ${math_ceil};</br>
-Сума товару округленадо найближчого = ${math_round};</br>
-${result_odd};</br>
+Сума без копійок округлена до меншого  ${math_floor};</br>
+Сума товару округлена до найближчих сотень = ${math_round};</br>
+Число є ${odd? "непарним" : "парним"}</br>
 Решта = ${rest};<br/>
 Средня ціна = ${mid_price};<br/>
 Знижка = ${rnum_round} %;<br>
