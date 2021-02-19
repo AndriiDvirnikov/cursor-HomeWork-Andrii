@@ -17,8 +17,9 @@ if (n > m) {
     let c = n;
     n=m;
     m=c;
+    console.log (`міняєм значення місцями N = ${n}, M = ${m}`);
 }
-console.log (`міняєм значення місцями N = ${n}, M = ${m}`);
+
 
 let sum = 0;
 if (confirm("пропускати парні?")){
