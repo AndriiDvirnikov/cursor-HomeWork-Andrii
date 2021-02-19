@@ -12,6 +12,14 @@ do{
 } while(isNaN(m));
 console.log (m,typeof(m));
 
+console.log (`Значення N = ${n}, Значення M ${m}`);
+if (n > m) {
+    let c = n;
+    n=m;
+    m=c;
+}
+console.log (`міняєм значення місцями N = ${n}, M = ${m}`);
+
 let sum = 0;
 if (confirm("пропускати парні?")){
     console.log("Пропускати парні");
