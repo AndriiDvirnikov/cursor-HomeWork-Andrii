@@ -1,40 +1,43 @@
-let n;
+let first_number;
 do{
-  n = prompt("Введіть число N",);
-    n = parseInt(n,10);
-} while(isNaN(n));
-console.log (n, typeof(n));
+  first_number = prompt("Введіть число N",);
+    first_number = parseInt(first_number,10);
+} while(isNaN(first_number));
+console.log (first_number, typeof(first_number));
 
-let m;
+let second_number;
 do{
-  m = prompt("Введіть число M",);
-    m = parseInt(m,10);
-} while(isNaN(m));
-console.log (m,typeof(m));
+  second_number = prompt("Введіть число M",);
+    second_number = parseInt(second_number,10);
+} while(isNaN(second_number));
 
-console.log (`Значення N = ${n}, Значення M ${m}`);
-if (n > m) {
-    let c = n;
-    n=m;
-    m=c;
-    console.log (`міняєм значення місцями N = ${n}, M = ${m}`);
+console.log (second_number,typeof(second_number));
+console.log (`Значення N = ${first_number}, Значення M ${second_number}`);
+
+/* перевірка на більшість */
+if (first_number > second_number) {
+    [first_number,second_number] = [second_number,first_number];
+    console.log (`міняєм значення місцями N = ${first_number}, M = ${second_number}`);
 }
-
-
+console.log (`міняєм значення місцями N = ${second_number}, M = ${first_number}`);
 let sum = 0;
-if (confirm("пропускати парні?")){
+/* Питання пропуску парних */
+const skip = confirm("пропускати парні?");
+if (skip === true){
     console.log("Пропускати парні");
-    for (n ; n<=m; n++){
-        if(n%2 === 1){
-            sum +=n;
-        }
+    for ( let i = first_number ; i<=second_number; i++){
+        if( i%2 ===0 ){
+            continue;
+        }sum = sum + i;
     }
     console.log (`Пропускати парні сума: ${sum}`);
     document.writeln(`Пропускати парні сума: ${sum}`)
 }else{
-    for (n ; n<=m; n++){
-            sum +=n;
+    for (let i =first_number ; i<=second_number; i++){
+            sum = sum +i;
         }
     console.log(`Сума чисел ${sum}`);
     document.writeln(`Сума чисел: ${sum}`)
 }
+
+
