@@ -16,7 +16,6 @@ function getMaxDigit(ourNumber) {
 getMaxDigit (ourNumber);
 
 
-
 /*#2 Створити функцію, яка визначає ступінь числа. Не використовуючи Math.pow та **. Використовуйте цикл*/
 const numberForPow = 3;
 const pow = 4;
@@ -145,3 +144,7 @@ document.writeln(`#5 Створити функцію, яка повертає в
 document.writeln(`#8 Створіть функцію генерації випадкового паролю (тільки числа), довжина встановлюється користувачем або по замовчуванню = 8 символам/ Пароль ${RandomPasword(number)}</br>`);
 
 document.writeln(`#9 Створіть функцію, яка видаляє всі букви з речення. Приклад: deleteLetters('a', "blablabla") -> "blblbl" слово : ${wordcut} буква : ${lettercut} після:${DeleteLatters(lettercut,wordcut)}</br>`);
+
+
+
+
