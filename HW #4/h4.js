@@ -2,45 +2,56 @@
 const students = ["Олександр", "Іван", "Олена", "Іра", "Олексій", "Світлана"];
 const themes = ["Диференційне рівняння", "Теорія автоматів", "Алгоритми і структури даних"];
 const marks = [4, 5, 5, 3, 4, 5];
+console.log('students',students);
+console.log('themes',themes);
+console.log('marks',marks);
 
-function printStudents (students){
+console.log(`/************************************/`)
+
+function printStudents (students, themes, marks){
     const arrBoy = [];
     const arrGirl = [];
+    const studentCoupl = [];
+    const studentsCouplThemes = [];
+    const markStedents = [];
+    const newMark = []
+    
     for (let i = 0; i < students.length;i++){
         const newArr = students[i].slice(-1);
-        console.log('newArr', newArr);
         if(newArr === "а"){
             arrGirl.push (students[i]);
         } else{
             arrBoy.push (students[i]);
         }
     }
+    
     console.log('arrBoy',arrBoy);
     console.log('arrGirl',arrGirl);
-
-}
-/* */
-
-printStudents (students);
-
-/*#1 Розділіть студентів на пари(хлопець + дівчина) для работи над проєктом. У вас повинен вийти вкладений масив з парами студентів: [["Олександр", "Олена"], [..], [...]];
-const studentCouple = [ [students[0],students[2]],[students[1],students[3]],[students[4],students[5]] ];
-console.log (studentCouple);
-document.writeln(`studentCouple : ${studentCouple}`);
-
-
-
-const studentsThemes = [ [students[0],students[2],themes.splice(0,1)],[students[1],students[3],themes.splice(0,1)], [students[4],students[5],themes.splice(0,1)]];
-
-console.log (studentsThemes);
-document.writeln(`</br>studentsThemes : ${studentsThemes}`);
-
-for (let i=0; i<students.length;i++){
-    const studentMark = [students[i],marks[i]];
-    console.log (studentMark);
+    
+    for (let i =0; i<arrBoy.length;i++){
+        newMark[i]=randomMark();
+        
+        studentCoupl.push([arrBoy[i],arrGirl[i],themes[i],newMark[i]]);
+    }
+    console.log(`studentCoupl`,studentCoupl)
+    
+  for (let i = 0 ; i < students.length;i++){
+      markStedents.push (students[i],marks[i]);
+  }
+    console.log(markStedents);
+    
+    return studentCoupl.join('</br> ');
 }
 
-function randomMark (){
-    const randomMark = Math.round((Math.random()* (5-1))+1);
-    console.log(randomMark);
-}randomMark();*/
+function randomMark(){
+    let randomMark = Math.ceil((Math.random()* (5-1))+1);
+    return randomMark;
+}
+
+
+
+printStudents (students,themes,marks);
+
+document.writeln('',printStudents (students,themes,marks));
+
+
