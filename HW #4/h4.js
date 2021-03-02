@@ -36,7 +36,7 @@ function printStudents (students, themes, marks){
     console.log(`studentCoupl`,studentCoupl)
     
   for (let i = 0 ; i < students.length;i++){
-      markStedents.push (students[i],marks[i]);
+      markStedents.push([students[i],marks[i]]);
   }
     console.log(markStedents);
     
