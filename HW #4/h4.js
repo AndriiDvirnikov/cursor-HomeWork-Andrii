@@ -84,7 +84,7 @@ function newMarks (studentsThemes,markForThemes){
         const themes1 = studentsThemes[i];
         
         console.log('themes1',themes1);
-      newMarks.push(themes1.join(', '),markForThemes);
+      newMarks.push([themes1.join(', '),markForThemes]);
     }
     console.log('newMarks',newMarks);
     return newMarks;
