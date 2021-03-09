@@ -90,8 +90,30 @@ console.log ('****************************************************************')
 
 function getStudentsNames(students){
 
-        
+    
 }
 getStudentsNames(students);
 
 
+/*#6 Створіть функцію calculateWordLetters("тест") --> { "т": 2, "е": 1, "с": 1 } – яка повертає обє'кт, в якому ключі це букви у слові, а значення – кількість їх повторень. */
+function calculateWordLetters(word) {
+    let obj = {}
+    console.log (word);
+    const letters = [...word];
+    let k = 0;
+    
+    console.log (letters);
+    for (let c=0; c< letters.length;c++){
+        let counter = 0;
+        k = letters[c];
+        for (let i = 0 ; i<letters.length; i++){
+            if (k === letters[i]){
+                counter = counter+1;
+            }
+        }
+        obj[letters[c]] = counter;
+    }
+    return obj;
+}
+
+console.log (calculateWordLetters('абракадабра'))
