@@ -30,8 +30,8 @@ console.log ('Students', students)
 
 function getSubjects(students,index){
         const keys = Object.keys(students[index].subjects);
-        console.log ('keys',keys);
-    for (let i =0 ; i< keys.length;i++){
+        
+        for (let i =0 ; i< keys.length;i++){
         
         const keysforletter = keys[i];
         const firstLetter = keysforletter[0].toUpperCase();
@@ -40,7 +40,7 @@ function getSubjects(students,index){
     }
     return keys;
 }
-console.log ('Name subject: ',getSubjects (students,1));
+console.log ('Name subject: ',getSubjects (students,0));
 
 console.log ('****************************************************************')
 /*#2 Створіть функцію getAverageMark(students[0]) --> 3.79 – яка поверне середню оцінку по усім предметам для переданого студента НЕ МАСИВА СТУДЕНТІВ. Оцінку округліть до 2ого знаку. Можна використовувати функції, написані у попередніх домашніх завданнях :) */
