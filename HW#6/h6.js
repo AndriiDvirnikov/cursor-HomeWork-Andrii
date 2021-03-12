@@ -49,7 +49,7 @@ function getAverageMark (students,index){
     let avarege = 0;
     let ave = 0;
     let newaverage = 0;
-    const subjects = Object.values(students[index].subjects);
+    const subjects = Object.values(students[index].subjects).join(',').split(',');
     
     for (let i = 0 ; i<subjects.length;i++){
         const submarks = subjects[i];
