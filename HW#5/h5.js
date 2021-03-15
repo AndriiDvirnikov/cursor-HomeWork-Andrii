@@ -6,7 +6,7 @@ function getRandomArray(length, min, max) {
   const randomArray = [];
 
   for (let i = 0; i < length; i++) {
-    randomArray.push(Math.ceil(Math.random() * (25 - 1) + 1));
+    randomArray.push(Math.ceil(Math.random() * (max - min) + 1));
   }
 
   return randomArray;
@@ -21,13 +21,7 @@ function getAverage(randomArray) {
   for (let i = 0; i < randomArray.length; i++) {
     avarege = avarege + randomArray[i];
   }
-  console.log(
-    "avarege",
-    avarege,
-    "/",
-    randomArray.length,
-    "randomArray.length"
-  );
+  console.log("avarege", avarege,"/",randomArray.length,"randomArray.length");
   avarege = avarege / randomArray.length;
   return avarege;
 }
@@ -105,3 +99,18 @@ function mediana(randomArray) {
   }
 }
 console.log(`Mediana : ${mediana(randomArray)}`);
+
+ 
+
+/* Перероблене 6-е завдання  */
+const positiveArray = [-5, 2, 5, -7, 8, -9, -10].filter(isBigEnough);
+ console.log ('positiveNumber',positiveArray)
+
+
+const positiveNumbers = positiveArray.reduce((element, value,index)=>{return index + 1});
+
+function isBigEnough(value) {
+  return value > 0;
+}
+    console.log ('positiveNumbers',positiveNumbers)
+    
