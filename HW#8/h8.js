@@ -84,7 +84,7 @@ console.log ('new mark after recover', firstStudent.getMarks);
 class BudgetStudent extends Students{
     constructor (university,course,fullName, mark){
         super(university,course,fullName, mark);
-        setTimeout (()=>{
+        setInterval (()=>{
             this.getScholarship
         },5000);
        
