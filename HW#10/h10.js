@@ -24,7 +24,7 @@ function generateBlocks(){
     item.style.width = '325px';
 })
 }
-generateBlocks();
+
 
 /*Advanced зробіть так, щоб квадрати змінювали колір раз на секунду.
 Щоб квадрати з'явились на сторінці та почали змінюватись, необхідно викликати функцію generateBlocksInterval(); Приклад виконаного ДЗ на відео  */
@@ -32,4 +32,4 @@ function generateBlocksInterval(){
   const interval = setInterval(generateBlocks,1000);
     setTimeout(() => { clearInterval(interval)}, 7000);
 }
-generateBlocksInterval()
+
