@@ -37,6 +37,7 @@ function getMySalary(country) {
     const randomSalary = Math.floor(Math.random() * (maxSalary-minSalary))+minSalary;
     const taxes = Math.floor(this.tax * randomSalary)
     const profit = randomSalary - taxes
+    setTimeout(() => { clearInterval(interval); console.log ('Stop')}, 10000);
     return {
         salary: randomSalary,
         taxes: taxes,
@@ -48,7 +49,7 @@ let interval = setInterval (function (){
     console.log ('Пройшло 5 секунд', getMySalary.call(ukraine))
 },5000);
 
-setTimeout(() => { clearInterval(interval); console.log ('Stop')}, 50000);
+
 
 
 
