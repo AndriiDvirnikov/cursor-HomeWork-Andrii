@@ -33,3 +33,5 @@ function generateBlocksInterval(){
     setTimeout(() => { clearInterval(interval)}, 7000);
 }
 
+generateBlocks();
+generateBlocksInterval();
