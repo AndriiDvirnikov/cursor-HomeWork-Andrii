@@ -10,6 +10,7 @@ function getRandomChinese(length){
                 const date = Date.now ();
                 const str = date.toString();
                 const sub = str.substr(-5);
+                console.log (sub)
                 const newLetter = String.fromCharCode(sub);
                 const num = Number (sub)
                  i++;
