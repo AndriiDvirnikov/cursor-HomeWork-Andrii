@@ -32,26 +32,26 @@ class Students {
         return avarege = (Math.round((avarege / this.marks.length)*10)/10);
     }
     dismiss(){
-        delete this.university;
+        /*delete this.university;
         delete this.course;
-        delete this.fullName;
+        delete this.fullName;*/
         this.marks = null;
     }
 
     recover() {
         if (this.marks === null){
-            this.university = lastStudent.university;
+            /*this.university = lastStudent.university;
             this.course = lastStudent.course;
-            this.fullName = lastStudent.fullName;
-            this.marks = lastStudent.marks
+            this.fullName = lastStudent.fullName;*/
+            this.marks = dellStudent.marks
         }
         
     }
        
 }
-let lastStudent = {};
+let dellStudent = {};
 const firstStudent = new Students ('Політехніка', 3, 'Остап Бендер', [5,4,3,2,1,4]);
-Object.assign (lastStudent, firstStudent);
+Object.assign (dellStudent, firstStudent);
 
 
 
