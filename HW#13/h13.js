@@ -40,32 +40,54 @@ btnInfo.addEventListener('click', function getEpisod (){
    })
 
 const btnPlanets = document.querySelector('#planets')
-btnPlanets.addEventListener('click', function getEPlanets (){     fetch('https://swapi.dev/api/planets')
+btnPlanets.addEventListener('click', function getEPlanets (){
+    fetch('https://swapi.dev/api/planets')
     .then((response)=>{
         return response.json();
     })
     .then((planets)=>{
         const planetsInfo = planets.results;
         console.log (planets);
-        
+      
         for (let i =0; i<planetsInfo.length; i++){
-            console.log (i,planetsInfo[i].name);
+            const text = document.querySelector('#plan');
+            const newElem = document.createElement("div");
+            newElem.className = 'planets';
+            newElem.innerHTML = planetsInfo[i].name;
+            text.appendChild(newElem);
+            
+            console.log (planetsInfo[i].name);
         }
-        return planets.next
+        const nextPage = planets.next
+        return nextPage
     })
-    .then ((test)=>{
-        fetch(test)
-        .then((response)=>{
-            return response.json();
-        })
-        .then((planets)=>{
-                const planetsInfo = planets.results;
-        console.log (planets);
+    .then((nextPage)=>{
+        const nextPlanets = document.querySelector('#next');
+        nextPlanets.addEventListener ('click',()=>{
+            fetch(nextPage)
+            .then((response)=>{
+                return response.json();
+            })
+            .then((next)=>{
+                const num = document.querySelectorAll('.planets')
+                num.forEach(element => element.innerHTML='');
+                const nextPlanets = next.results;
+                const arr = [...num];
+                
+                for (let i=0; i< nextPlanets.length; i++){
+                    console.log (nextPlanets[i].name);
+                }
+                
+            })
+            
         
-        for (let i =0; i<planetsInfo.length; i++){
-            console.log (i,planetsInfo[i].name);
-        }
-        return planets.next
         })
     })
+    
+    
+    
+    
+    
 })
+
+
