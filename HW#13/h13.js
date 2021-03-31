@@ -131,8 +131,9 @@ function getPlanets(){
 const nextPlanets = document.querySelector('#next');
 nextPlanets.addEventListener ('click',function(){
     numPage++;
+    
     const num = document.querySelectorAll('.planets')
-    num.forEach(element => element.innerHTML='');
+    num.forEach(element => element.remove());
     if (numPage > max)  numPage = 1;
     getPagePlanets (numPage);
 })
