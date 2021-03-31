@@ -2,6 +2,10 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+    font-family: 'Alfa Slab One', cursive;
+}
+body {
+    font-family: 'Alfa Slab One', cursive;
 }
 
 #block{
@@ -10,9 +14,13 @@
     flex-wrap: wrap;
 }
 .person{
-    font-family: 'Alfa Slab One', cursive;
-    width: 50%;
-    text-align: center;
+width: 48%;
+text-align: center;
+height: 120px;
+border: 2px solid;
+margin: 5px;
+overflow: hidden;
+border-radius: 40px;
 }
 .personImg{
     width: 150px;

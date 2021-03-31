@@ -1,6 +1,8 @@
+
 const btnInfo = document.querySelector('#getInfo')
-btnInfo.addEventListener('click', function getEpisod (){
-  fetch('https://swapi.dev/api/films/2')
+btnInfo.addEventListener('click', function(){
+  let film = 'https://swapi.dev/api/films/2/';
+  fetch(film)
     .then((response)=>{
     return response.json();
     })
@@ -39,7 +41,7 @@ btnInfo.addEventListener('click', function getEpisod (){
   
    })
 
-const btnPlanets = document.querySelector('#planets')
+/*const btnPlanets = document.querySelector('#planets')
 btnPlanets.addEventListener('click', function getEPlanets (){
     fetch('https://swapi.dev/api/planets')
     .then((response)=>{
@@ -62,32 +64,106 @@ btnPlanets.addEventListener('click', function getEPlanets (){
         return nextPage
     })
     .then((nextPage)=>{
-        const nextPlanets = document.querySelector('#next');
-        nextPlanets.addEventListener ('click',()=>{
-            fetch(nextPage)
-            .then((response)=>{
-                return response.json();
+            const nextPlanets = document.querySelector('#next');
+            nextPlanets.addEventListener ('click',()=>{
+                console.log (nextPage)
+                    /*nextP (nextPage)*/
+                   
+                    /*fetch(nextPage)
+                    .then((response)=>{
+                        return response.json();
+                    })
+                    .then((next)=>{
+                        nextP (next.next)
+                        const num = document.querySelectorAll('.planets')
+                        num.forEach(element => element.innerHTML='');
+                        const nextPlanets = next.results;
+                        const arr = [...num];
+
+                        for (let i=0; i< nextPlanets.length; i++){
+                            console.log (nextPlanets[i].name);
+                            num[i].innerHTML = nextPlanets[i].name;
+                        }
+
+
+                    })
+                   
+
             })
-            .then((next)=>{
-                const num = document.querySelectorAll('.planets')
-                num.forEach(element => element.innerHTML='');
-                const nextPlanets = next.results;
-                const arr = [...num];
-                
-                for (let i=0; i< nextPlanets.length; i++){
-                    console.log (nextPlanets[i].name);
-                }
-                
-            })
-            
         
-        })
     })
     
-    
-    
-    
-    
+})*/
+let numPage = 1;
+const max = 6
+const btnPlanets = document.querySelector('#planets')
+btnPlanets.addEventListener('click', getPlanets)
+function getPlanets(){
+    getPagePlanets(numPage)
+}
+
+ function getPagePlanets(numPage){
+  
+     let page = 'https://swapi.dev/api/planets/?page='+ numPage;
+     console.log (page)
+     fetch(page)
+        .then((response)=>{
+            return response.json();
+        })
+         .then((planets)=>{
+            const planetsInfo = planets.results;
+            console.log (planets);
+      
+            for (let i =0; i<planetsInfo.length; i++){
+                const text = document.querySelector('#plan');
+                const newElem = document.createElement("div");
+                newElem.className = 'planets';
+                newElem.innerHTML = planetsInfo[i].name;
+                text.appendChild(newElem);
+                console.log (planetsInfo[i].name);
+        }
+         
+         })
+     
+     
+    }
+
+const nextPlanets = document.querySelector('#next');
+nextPlanets.addEventListener ('click',function(){
+    numPage++;
+    const num = document.querySelectorAll('.planets')
+    num.forEach(element => element.innerHTML='');
+    if (numPage > max)  numPage = 1;
+    getPagePlanets (numPage);
 })
 
 
+const infoInput = document.querySelector ('#getFilm');
+infoInput.addEventListener ('click', function(){
+   const filmPage = document.getElementById("myinput").value;
+   getFilmById (filmPage);
+})
+let id = 1;
+function getFilmById (id){
+    let filmPage = 'https://swapi.dev/api/films/'+id+'/';
+     fetch(filmPage)
+         .then((response)=>{
+          return response.json();
+        })
+        .then ((film)=>{
+        const filmByValue = document.querySelector('#filmByValue');
+        const newElem = document.createElement("div");
+        newElem.className = 'film';
+        newElem.innerHTML = 'film #: '+id+' / title: '+film.title + ' / release  / date: ' + film.release_date + ' / producer: '+ film.producer;
+        filmByValue.appendChild (newElem);
+         
+        })
+}
+
+fetch('https://swapi.dev/api/planets/1/?format=wookiee')
+    .then((response)=>{
+        return response.json();
+    })
+    .then((data)=>{
+        console.log (data);
+    })
