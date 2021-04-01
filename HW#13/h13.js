@@ -1,6 +1,9 @@
 
+
 const btnInfo = document.querySelector('#getInfo')
 btnInfo.addEventListener('click', function(){
+    const snd = new Audio("sound/marsh.mp3");
+    snd.play();
   let film = 'https://swapi.dev/api/films/2/';
   fetch(film)
     .then((response)=>{
