@@ -1,4 +1,10 @@
-function replace (film){
+function replace (response){
+
+    if (response[4]!=='s') {
+        console.log ('маємо S');
+        const helpValue = response.replace ('http','https')
+        return helpValue;
+    }
     
 }
 
@@ -12,7 +18,7 @@ btnInfo.addEventListener('click', function(){
   const blockHight = document.querySelector('#block')
   blockHight.style.height = '520px'
   let film = 'https://swapi.dev/api/films/2/';
-  
+  replace (film)
   console.log (film);
   
   fetch(film)
@@ -27,10 +33,12 @@ btnInfo.addEventListener('click', function(){
           
           fetch(arr[i])
           .then((response)=>{
+              replace (response.url)
+              console.log ('response',response);
                 return response.json();
           })
           .then((data2)=>{
-             
+              
               str = 'name: '+data2.name+' / birth day: '+data2.birth_year+' / gender: '+data2.gender
               
               const text = document.querySelector('#block');
