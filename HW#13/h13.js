@@ -10,7 +10,7 @@ btnInfo.addEventListener('click', function(){
     clearHihgt ('#plan');
   const blockHight = document.querySelector('#block')
   blockHight.style.height = '520px'
-  let film = 'https://swapi.dev/api/films/2';
+  let film = 'http://swapi.dev/api/films/2';
   fetch(film)
     .then((response)=>{
     return response.json();
