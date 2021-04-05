@@ -1,7 +1,6 @@
 function replace (response){
 
     if (response[4]!=='s') {
-        console.log ('маємо S');
         const helpValue = response.replace ('http','https')
         return helpValue;
     }
@@ -26,15 +25,15 @@ btnInfo.addEventListener('click', function(){
     return response.json();
     })
     .then((data)=>{
-     
       const arr = data.characters;
-          
+         
         for (let i = 0 ; i< arr.length; i++){
+          
+          console.log ('arr', replace (arr[i]))
           
           fetch(arr[i])
           .then((response)=>{
-              replace (response.url)
-              console.log ('response',response);
+              
                 return response.json();
           })
           .then((data2)=>{
