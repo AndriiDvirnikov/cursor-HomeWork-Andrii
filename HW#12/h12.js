@@ -1,27 +1,36 @@
 
-
+const element = document.querySelector ('#letters');
+const creatElement = document.createElement("div");
 function getRandomChinese(length){
     return new Promise((resolve)=>{
         let letters = '';
-        const timer = length * 50;
+        const timer = length;
             setTimeout (()=>{
             let i = 0;
-            while (i<length) {
+           
                 const date = Date.now ();
+                console.log (date,'date')
                 const str = date.toString();
                 const sub = str.substr(-5);
-                console.log (sub)
                 const newLetter = String.fromCharCode(sub);
-                const num = Number (sub)
+                const num = Number (sub);
+               
                  i++;
                 letters = letters+' '+ newLetter;
-               
-                resolve();
-            }
-                 console.log (letters)
-        },timer);
+                const creatElement = document.createElement("div"); element.appendChild(creatElement).innerHTML=letters;
+                
+                console.log (letters)
+                return resolve();
+                
+        },200);
     });
 }
 
-getRandomChinese(4).then(()=>{console.log ("Done")})
 
+getRandomChinese(1).then(()=>{
+    return getRandomChinese(2)
+}).then (()=>{
+     return getRandomChinese(3)
+}).then (()=>{
+     return getRandomChinese(4)
+})
