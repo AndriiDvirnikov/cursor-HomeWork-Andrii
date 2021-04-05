@@ -1,16 +1,16 @@
 
-console.log('document.height',document.body.clientHeight)
-
 const btnInfo = document.querySelector('#getInfo')
 btnInfo.addEventListener('click', function(){
-    const snd = new Audio("sound/marsh.mp3");
-    snd.play();
+    let num = 2;
+    /*const snd = new Audio("sound/marsh.mp3");
+    snd.play();*/
     removeElemets ('.person');
     removeElemets ('.planets');
     clearHihgt ('#plan');
   const blockHight = document.querySelector('#block')
   blockHight.style.height = '520px'
-  let film = 'http://swapi.dev/api/films/2';
+  let film = 'https://swapi.dev/api/films/'+num;
+  
   fetch(film)
     .then((response)=>{
     return response.json();
