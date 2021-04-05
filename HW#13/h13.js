@@ -4,15 +4,15 @@ function replace (film){
 
 const btnInfo = document.querySelector('#getInfo')
 btnInfo.addEventListener('click', function(){
-    /*const snd = new Audio("sound/marsh.mp3");
-    snd.play();*/
+    const snd = new Audio("sound/marsh.mp3");
+    snd.play();
     removeElemets ('.person');
     removeElemets ('.planets');
     clearHihgt ('#plan');
   const blockHight = document.querySelector('#block')
   blockHight.style.height = '520px'
   let film = 'https://swapi.dev/api/films/2/';
-  film = film.replace('https', 'http');
+  
   console.log (film);
   
   fetch(film)
