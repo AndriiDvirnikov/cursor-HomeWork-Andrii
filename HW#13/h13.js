@@ -28,10 +28,10 @@ btnInfo.addEventListener('click', function(){
       const arr = data.characters;
          
         for (let i = 0 ; i< arr.length; i++){
+          const helpValue = replace (arr[i])
+          console.log ('helpValue', helpValue)
           
-          console.log ('arr', replace (arr[i]))
-          
-          fetch(arr[i])
+          fetch(helpValue)
           .then((response)=>{
               
                 return response.json();
