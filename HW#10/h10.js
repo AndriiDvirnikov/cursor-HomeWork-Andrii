@@ -9,6 +9,9 @@ function randomColor (){
     }
     return '#'+randomColor;
 }
+module.exports = {
+    randomColor
+}
 function generateBlocks(){
     const block = document.getElementsByClassName('block');
     [...block].forEach (item =>{

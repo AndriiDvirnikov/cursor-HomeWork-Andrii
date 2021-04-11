@@ -43,6 +43,8 @@ console.log(`Средня ціна = ${mid_price}`);
 const mid_price_round = Math.round(mid_price*100)/100;
 console.log(`Средня ціна округлена до другого знаку після коми = ${mid_price_round}`);
 
+
+
 /* ЗНИЖКА */
 const rNum = Math.random();
 const rnum_round = Math.round(rNum*100);
@@ -67,6 +69,7 @@ document.writeln (`Гроші ${money};</br>
 Знижка = ${rnum_round} %;<br>
 Знижка в грн = ${sale_round};<br/>
 Чистий прибуток = ${profit}`);
+
 
 
 

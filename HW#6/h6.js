@@ -1,3 +1,5 @@
+
+
 const students = [{
   name: "Tanya",
   course: 3,
@@ -40,7 +42,9 @@ function getSubjects(students,index){
     }
     return keys;
 }
+
 console.log ('Name subject: ',getSubjects (students,0));
+
 
 console.log ('****************************************************************')
 /*#2 Створіть функцію getAverageMark(students[0]) --> 3.79 – яка поверне середню оцінку по усім предметам для переданого студента НЕ МАСИВА СТУДЕНТІВ. Оцінку округліть до 2ого знаку. Можна використовувати функції, написані у попередніх домашніх завданнях :) */
@@ -84,6 +88,9 @@ function getStudentInfo(students,index){
     }
 }
 console.log (getStudentInfo(students,0));
+
+
+
 
 console.log ('****************************************************************')
 /* #4 Ствроіть функцію getStudentsNames(students) --> ["Anton", "Tanya, "Victor"] – яка повертає імена студентів у алфавітному порядку. */

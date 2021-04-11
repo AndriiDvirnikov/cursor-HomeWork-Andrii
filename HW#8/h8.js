@@ -52,7 +52,7 @@ class Students {
 let dellStudent = {};
 const firstStudent = new Students ('Політехніка', 3, 'Остап Бендер', [5,4,3,2,1,4]);
 Object.assign (dellStudent, firstStudent);
-
+module.exports = {firstStudent};
 
 
 /*#2 Створіть метод this.getInfo() -> "Студент 1го курсу Вищої Школи Психотерапії м.Одеса, Остап Родоманський Бендер", метод повертає сукупну інформацію про курс, учбовий заклад та імені студента.  */
